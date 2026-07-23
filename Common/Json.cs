@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bloom.Common
 {
-    public class Json
+    public static class Json
     {
         private static readonly JsonSerializerOptions Options = new()
         {

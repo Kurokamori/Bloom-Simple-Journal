@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace Bloom.Common
 {
-    public class Dates
+    public static class Dates
     {
         public const string KeyFormat = "yyyy-MM-dd";
 

@@ -1,0 +1,39 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="Theme.Id">Peach</sys:String>
+    <sys:String x:Key="Theme.Name">Sunset Peach</sys:String>
+    <sys:Boolean x:Key="Theme.IsDark">False</sys:Boolean>
+
+    <Color x:Key="C.Bg">#FEF4EC</Color>
+    <Color x:Key="C.Bg2">#FBE6D6</Color>
+    <Color x:Key="C.Surface">#FFFFFF</Color>
+    <Color x:Key="C.SurfaceAlt">#FFF3EA</Color>
+    <Color x:Key="C.Sunken">#FBE7D6</Color>
+    <Color x:Key="C.Border">#F5D9C4</Color>
+    <Color x:Key="C.BorderStrong">#EFC4A8</Color>
+    <Color x:Key="C.Text">#5A4038</Color>
+    <Color x:Key="C.TextMuted">#8A6A5C</Color>
+    <Color x:Key="C.TextSubtle">#B89684</Color>
+    <Color x:Key="C.TextInverse">#FFFFFF</Color>
+    <Color x:Key="C.Primary">#F5A66E</Color>
+    <Color x:Key="C.PrimaryHover">#EE9455</Color>
+    <Color x:Key="C.PrimarySoft">#FDE6D3</Color>
+    <Color x:Key="C.OnPrimary">#FFFFFF</Color>
+    <Color x:Key="C.Secondary">#F08FA0</Color>
+    <Color x:Key="C.SecondarySoft">#FCE1E6</Color>
+    <Color x:Key="C.Accent">#86C0C8</Color>
+    <Color x:Key="C.AccentSoft">#DEF0F2</Color>
+    <Color x:Key="C.Success">#86C7A0</Color>
+    <Color x:Key="C.Warning">#EEB24A</Color>
+    <Color x:Key="C.Danger">#E5768C</Color>
+    <Color x:Key="C.Info">#8FB8DE</Color>
+    <Color x:Key="C.Coin">#E0932E</Color>
+    <Color x:Key="C.Nav">#FFFFFF</Color>
+    <Color x:Key="C.NavText">#8A6A5C</Color>
+    <Color x:Key="C.NavActive">#F5A66E</Color>
+    <Color x:Key="C.PageArea">#F9E7D7</Color>
+    <Color x:Key="C.Shadow">#E4B79C</Color>
+
+</ResourceDictionary>

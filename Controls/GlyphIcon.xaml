@@ -1,0 +1,23 @@
+<UserControl x:Class="Bloom.Controls.GlyphIcon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="Root">
+    <Grid>
+        <TextBlock Text="{Binding Glyph, ElementName=Root}"
+                   FontSize="{Binding GlyphSize, ElementName=Root}"
+                   FontFamily="Segoe UI Emoji"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Opacity="0" IsHitTestVisible="False" />
+        <Rectangle Fill="{Binding Tint, ElementName=Root}">
+            <Rectangle.OpacityMask>
+                <VisualBrush Stretch="Uniform">
+                    <VisualBrush.Visual>
+                        <TextBlock Text="{Binding Glyph, ElementName=Root}"
+                                   FontSize="{Binding GlyphSize, ElementName=Root}"
+                                   FontFamily="Segoe UI Emoji" />
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Rectangle.OpacityMask>
+        </Rectangle>
+    </Grid>
+</UserControl>

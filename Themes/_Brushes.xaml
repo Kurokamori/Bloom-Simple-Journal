@@ -1,0 +1,53 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="Bg" Color="{DynamicResource C.Bg}" />
+    <SolidColorBrush x:Key="Bg2" Color="{DynamicResource C.Bg2}" />
+    <SolidColorBrush x:Key="Surface" Color="{DynamicResource C.Surface}" />
+    <SolidColorBrush x:Key="SurfaceAlt" Color="{DynamicResource C.SurfaceAlt}" />
+    <SolidColorBrush x:Key="Sunken" Color="{DynamicResource C.Sunken}" />
+    <SolidColorBrush x:Key="Border" Color="{DynamicResource C.Border}" />
+    <SolidColorBrush x:Key="BorderStrong" Color="{DynamicResource C.BorderStrong}" />
+
+    <SolidColorBrush x:Key="Text" Color="{DynamicResource C.Text}" />
+    <SolidColorBrush x:Key="TextMuted" Color="{DynamicResource C.TextMuted}" />
+    <SolidColorBrush x:Key="TextSubtle" Color="{DynamicResource C.TextSubtle}" />
+    <SolidColorBrush x:Key="TextInverse" Color="{DynamicResource C.TextInverse}" />
+
+    <SolidColorBrush x:Key="Primary" Color="{DynamicResource C.Primary}" />
+    <SolidColorBrush x:Key="PrimaryHover" Color="{DynamicResource C.PrimaryHover}" />
+    <SolidColorBrush x:Key="PrimarySoft" Color="{DynamicResource C.PrimarySoft}" />
+    <SolidColorBrush x:Key="OnPrimary" Color="{DynamicResource C.OnPrimary}" />
+
+    <SolidColorBrush x:Key="Secondary" Color="{DynamicResource C.Secondary}" />
+    <SolidColorBrush x:Key="SecondarySoft" Color="{DynamicResource C.SecondarySoft}" />
+    <SolidColorBrush x:Key="Accent" Color="{DynamicResource C.Accent}" />
+    <SolidColorBrush x:Key="AccentSoft" Color="{DynamicResource C.AccentSoft}" />
+
+    <SolidColorBrush x:Key="Success" Color="{DynamicResource C.Success}" />
+    <SolidColorBrush x:Key="Warning" Color="{DynamicResource C.Warning}" />
+    <SolidColorBrush x:Key="Danger" Color="{DynamicResource C.Danger}" />
+    <SolidColorBrush x:Key="Info" Color="{DynamicResource C.Info}" />
+    <SolidColorBrush x:Key="Coin" Color="{DynamicResource C.Coin}" />
+
+    <SolidColorBrush x:Key="Nav" Color="{DynamicResource C.Nav}" />
+    <SolidColorBrush x:Key="NavText" Color="{DynamicResource C.NavText}" />
+    <SolidColorBrush x:Key="NavActive" Color="{DynamicResource C.NavActive}" />
+    <SolidColorBrush x:Key="PageArea" Color="{DynamicResource C.PageArea}" />
+
+    <LinearGradientBrush x:Key="WindowBackground" StartPoint="0,0" EndPoint="0.6,1">
+        <GradientStop Color="{DynamicResource C.Bg}" Offset="0" />
+        <GradientStop Color="{DynamicResource C.Bg2}" Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="PrimaryGradient" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{DynamicResource C.Primary}" Offset="0" />
+        <GradientStop Color="{DynamicResource C.Secondary}" Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="CoinGradient" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="{DynamicResource C.Coin}" Offset="0" />
+        <GradientStop Color="{DynamicResource C.Warning}" Offset="1" />
+    </LinearGradientBrush>
+
+</ResourceDictionary>

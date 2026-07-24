@@ -1,6 +1,8 @@
+using Bloom.Models;
 using Dapper;
 using Microsoft.Data.Sqlite;
-using Bloom.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Bloom.Data.Repositories;
 
@@ -33,8 +35,16 @@ public sealed class HabitRepository
             "@TargetPerPeriod, @CoinReward, @Note, @SortOrder, @IsArchived, @CreatedAt); SELECT last_insert_rowid();",
             new
             {
-                habit.Name, habit.Icon, habit.Color, Cadence = (int)habit.Cadence, habit.IntervalDays,
-                habit.TargetPerPeriod, habit.CoinReward, habit.Note, habit.SortOrder, habit.IsArchived,
+                habit.Name,
+                habit.Icon,
+                habit.Color,
+                Cadence = (int)habit.Cadence,
+                habit.IntervalDays,
+                habit.TargetPerPeriod,
+                habit.CoinReward,
+                habit.Note,
+                habit.SortOrder,
+                habit.IsArchived,
                 CreatedAt = habit.CreatedAt == default ? DateTime.Now : habit.CreatedAt
             });
     }
@@ -48,9 +58,17 @@ public sealed class HabitRepository
             "note = @Note, sort_order = @SortOrder, is_archived = @IsArchived WHERE id = @Id;",
             new
             {
-                habit.Id, habit.Name, habit.Icon, habit.Color, Cadence = (int)habit.Cadence,
-                habit.IntervalDays, habit.TargetPerPeriod, habit.CoinReward, habit.Note,
-                habit.SortOrder, habit.IsArchived
+                habit.Id,
+                habit.Name,
+                habit.Icon,
+                habit.Color,
+                Cadence = (int)habit.Cadence,
+                habit.IntervalDays,
+                habit.TargetPerPeriod,
+                habit.CoinReward,
+                habit.Note,
+                habit.SortOrder,
+                habit.IsArchived
             });
     }
 

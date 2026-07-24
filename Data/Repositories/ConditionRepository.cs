@@ -1,6 +1,8 @@
+using Bloom.Models;
 using Dapper;
 using Microsoft.Data.Sqlite;
-using Bloom.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Bloom.Data.Repositories;
 
@@ -34,8 +36,12 @@ public sealed class ConditionRepository
             "SELECT last_insert_rowid();",
             new
             {
-                condition.Name, condition.Color, condition.Icon, condition.Notes,
-                condition.SortOrder, condition.IsArchived,
+                condition.Name,
+                condition.Color,
+                condition.Icon,
+                condition.Notes,
+                condition.SortOrder,
+                condition.IsArchived,
                 CreatedAt = condition.CreatedAt == default ? DateTime.Now : condition.CreatedAt
             });
     }
@@ -48,8 +54,13 @@ public sealed class ConditionRepository
             "sort_order = @SortOrder, is_archived = @IsArchived WHERE id = @Id;",
             new
             {
-                condition.Id, condition.Name, condition.Color, condition.Icon,
-                condition.Notes, condition.SortOrder, condition.IsArchived
+                condition.Id,
+                condition.Name,
+                condition.Color,
+                condition.Icon,
+                condition.Notes,
+                condition.SortOrder,
+                condition.IsArchived
             });
     }
 
@@ -100,9 +111,16 @@ public sealed class ConditionRepository
             "@SortOrder, @IsArchived, @CreatedAt); SELECT last_insert_rowid();",
             new
             {
-                symptom.ConditionId, symptom.Name, symptom.TrackScale, symptom.TrackText,
-                symptom.ScaleMin, symptom.ScaleMax, Widget = (int)symptom.Widget, symptom.Color,
-                symptom.SortOrder, symptom.IsArchived,
+                symptom.ConditionId,
+                symptom.Name,
+                symptom.TrackScale,
+                symptom.TrackText,
+                symptom.ScaleMin,
+                symptom.ScaleMax,
+                Widget = (int)symptom.Widget,
+                symptom.Color,
+                symptom.SortOrder,
+                symptom.IsArchived,
                 CreatedAt = symptom.CreatedAt == default ? DateTime.Now : symptom.CreatedAt
             });
     }
@@ -116,8 +134,15 @@ public sealed class ConditionRepository
             "sort_order = @SortOrder, is_archived = @IsArchived WHERE id = @Id;",
             new
             {
-                symptom.Id, symptom.Name, symptom.TrackScale, symptom.TrackText, symptom.ScaleMin,
-                symptom.ScaleMax, Widget = (int)symptom.Widget, symptom.Color, symptom.SortOrder,
+                symptom.Id,
+                symptom.Name,
+                symptom.TrackScale,
+                symptom.TrackText,
+                symptom.ScaleMin,
+                symptom.ScaleMax,
+                Widget = (int)symptom.Widget,
+                symptom.Color,
+                symptom.SortOrder,
                 symptom.IsArchived
             });
     }

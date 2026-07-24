@@ -1,6 +1,8 @@
+using Bloom.Models;
 using Dapper;
 using Microsoft.Data.Sqlite;
-using Bloom.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Bloom.Data.Repositories;
 

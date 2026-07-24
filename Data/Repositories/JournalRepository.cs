@@ -1,6 +1,8 @@
+using Bloom.Models;
 using Dapper;
 using Microsoft.Data.Sqlite;
-using Bloom.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Bloom.Data.Repositories;
 
@@ -25,7 +27,11 @@ public sealed class JournalRepository
             "VALUES (@EntryDate, @Mood, @Energy, @Productivity, @Note, @CreatedAt); SELECT last_insert_rowid();",
             new
             {
-                checkin.EntryDate, checkin.Mood, checkin.Energy, checkin.Productivity, checkin.Note,
+                checkin.EntryDate,
+                checkin.Mood,
+                checkin.Energy,
+                checkin.Productivity,
+                checkin.Note,
                 CreatedAt = checkin.CreatedAt == default ? DateTime.Now : checkin.CreatedAt
             });
     }
@@ -68,8 +74,12 @@ public sealed class JournalRepository
             "VALUES (@EntryDate, @Zone, @Intensity, @Cause, @Helped, @Note, @CreatedAt); SELECT last_insert_rowid();",
             new
             {
-                checkin.EntryDate, Zone = (int)checkin.Zone, checkin.Intensity, checkin.Cause,
-                checkin.Helped, checkin.Note,
+                checkin.EntryDate,
+                Zone = (int)checkin.Zone,
+                checkin.Intensity,
+                checkin.Cause,
+                checkin.Helped,
+                checkin.Note,
                 CreatedAt = checkin.CreatedAt == default ? DateTime.Now : checkin.CreatedAt
             });
     }
@@ -112,7 +122,10 @@ public sealed class JournalRepository
             "VALUES (@EntryDate, @Name, @Note, @MealTime, @CreatedAt); SELECT last_insert_rowid();",
             new
             {
-                food.EntryDate, food.Name, food.Note, food.MealTime,
+                food.EntryDate,
+                food.Name,
+                food.Note,
+                food.MealTime,
                 CreatedAt = food.CreatedAt == default ? DateTime.Now : food.CreatedAt
             });
     }
@@ -168,7 +181,11 @@ public sealed class JournalRepository
             "font_family = excluded.font_family, decor_json = excluded.decor_json, updated_at = excluded.updated_at;",
             new
             {
-                page.EntryDate, page.PageIndex, page.BackgroundId, page.FontFamily, page.DecorJson,
+                page.EntryDate,
+                page.PageIndex,
+                page.BackgroundId,
+                page.FontFamily,
+                page.DecorJson,
                 UpdatedAt = DateTime.Now
             });
     }

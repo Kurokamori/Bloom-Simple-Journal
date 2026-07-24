@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 
 namespace Bloom.Common
 {
@@ -21,16 +16,16 @@ namespace Bloom.Common
         public static T? Read<T>(string? text)
         {
             if (string.IsNullOrWhiteSpace(text))
-            { 
-                return default; 
+            {
+                return default;
             }
             try
-            { 
-                return JsonSerializer.Deserialize<T>(text, Options); 
+            {
+                return JsonSerializer.Deserialize<T>(text, Options);
             }
             catch (JsonException)
-            { 
-                return default; 
+            {
+                return default;
             }
         }
     }

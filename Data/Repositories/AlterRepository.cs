@@ -1,6 +1,8 @@
+using Bloom.Models;
 using Dapper;
 using Microsoft.Data.Sqlite;
-using Bloom.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Bloom.Data.Repositories;
 
@@ -33,8 +35,15 @@ public sealed class AlterRepository
             "@AvatarPath, @SortOrder, @IsArchived, @CreatedAt); SELECT last_insert_rowid();",
             new
             {
-                alter.Name, alter.Pronouns, alter.Role, alter.Age, alter.Color, alter.Description,
-                alter.AvatarPath, alter.SortOrder, alter.IsArchived,
+                alter.Name,
+                alter.Pronouns,
+                alter.Role,
+                alter.Age,
+                alter.Color,
+                alter.Description,
+                alter.AvatarPath,
+                alter.SortOrder,
+                alter.IsArchived,
                 CreatedAt = alter.CreatedAt == default ? DateTime.Now : alter.CreatedAt
             });
     }
@@ -48,8 +57,16 @@ public sealed class AlterRepository
             "sort_order = @SortOrder, is_archived = @IsArchived WHERE id = @Id;",
             new
             {
-                alter.Id, alter.Name, alter.Pronouns, alter.Role, alter.Age, alter.Color,
-                alter.Description, alter.AvatarPath, alter.SortOrder, alter.IsArchived
+                alter.Id,
+                alter.Name,
+                alter.Pronouns,
+                alter.Role,
+                alter.Age,
+                alter.Color,
+                alter.Description,
+                alter.AvatarPath,
+                alter.SortOrder,
+                alter.IsArchived
             });
     }
 
@@ -82,9 +99,16 @@ public sealed class AlterRepository
             "@StartTime, @EndTime, @Mood, @Opinion, @Note, @CreatedAt); SELECT last_insert_rowid();",
             new
             {
-                frontEvent.AlterId, frontEvent.EntryDate, frontEvent.Fronted, frontEvent.CoConscious,
-                frontEvent.StartTime, frontEvent.EndTime, frontEvent.Mood, frontEvent.Opinion,
-                frontEvent.Note, CreatedAt = frontEvent.CreatedAt == default ? DateTime.Now : frontEvent.CreatedAt
+                frontEvent.AlterId,
+                frontEvent.EntryDate,
+                frontEvent.Fronted,
+                frontEvent.CoConscious,
+                frontEvent.StartTime,
+                frontEvent.EndTime,
+                frontEvent.Mood,
+                frontEvent.Opinion,
+                frontEvent.Note,
+                CreatedAt = frontEvent.CreatedAt == default ? DateTime.Now : frontEvent.CreatedAt
             });
     }
 
@@ -97,8 +121,15 @@ public sealed class AlterRepository
             "WHERE id = @Id;",
             new
             {
-                frontEvent.Id, frontEvent.AlterId, frontEvent.Fronted, frontEvent.CoConscious,
-                frontEvent.StartTime, frontEvent.EndTime, frontEvent.Mood, frontEvent.Opinion, frontEvent.Note
+                frontEvent.Id,
+                frontEvent.AlterId,
+                frontEvent.Fronted,
+                frontEvent.CoConscious,
+                frontEvent.StartTime,
+                frontEvent.EndTime,
+                frontEvent.Mood,
+                frontEvent.Opinion,
+                frontEvent.Note
             });
     }
 

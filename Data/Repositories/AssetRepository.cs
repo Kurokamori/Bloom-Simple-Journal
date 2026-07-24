@@ -1,6 +1,8 @@
+using Bloom.Models;
 using Dapper;
 using Microsoft.Data.Sqlite;
-using Bloom.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Bloom.Data.Repositories;
 
@@ -26,8 +28,12 @@ public sealed class AssetRepository
             "VALUES (@Name, @Category, @ImagePath, @IsUnlocked, @UnlockCost, @SortOrder); SELECT last_insert_rowid();",
             new
             {
-                sticker.Name, Category = (int)sticker.Category, sticker.ImagePath,
-                sticker.IsUnlocked, sticker.UnlockCost, sticker.SortOrder
+                sticker.Name,
+                Category = (int)sticker.Category,
+                sticker.ImagePath,
+                sticker.IsUnlocked,
+                sticker.UnlockCost,
+                sticker.SortOrder
             });
     }
 
@@ -61,8 +67,14 @@ public sealed class AssetRepository
             "SELECT last_insert_rowid();",
             new
             {
-                background.Key, background.Name, background.Kind, background.Value, background.ImagePath,
-                background.IsUnlocked, background.UnlockCost, background.SortOrder
+                background.Key,
+                background.Name,
+                background.Kind,
+                background.Value,
+                background.ImagePath,
+                background.IsUnlocked,
+                background.UnlockCost,
+                background.SortOrder
             });
     }
 

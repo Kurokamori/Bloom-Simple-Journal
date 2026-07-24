@@ -1,7 +1,3 @@
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-
 namespace Bloom.Controls;
 
 public partial class GlyphIcon : UserControl

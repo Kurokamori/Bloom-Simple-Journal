@@ -1,6 +1,8 @@
+using Bloom.Models;
 using Dapper;
 using Microsoft.Data.Sqlite;
-using Bloom.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Bloom.Data.Repositories;
 
@@ -33,8 +35,14 @@ public sealed class RewardRepository
             "SELECT last_insert_rowid();",
             new
             {
-                reward.Name, reward.Description, reward.Cost, reward.Icon, Category = (int)reward.Category,
-                reward.IsCustom, reward.IsArchived, reward.SortOrder,
+                reward.Name,
+                reward.Description,
+                reward.Cost,
+                reward.Icon,
+                Category = (int)reward.Category,
+                reward.IsCustom,
+                reward.IsArchived,
+                reward.SortOrder,
                 CreatedAt = reward.CreatedAt == default ? DateTime.Now : reward.CreatedAt
             });
     }
@@ -47,8 +55,15 @@ public sealed class RewardRepository
             "category = @Category, is_custom = @IsCustom, is_archived = @IsArchived, sort_order = @SortOrder WHERE id = @Id;",
             new
             {
-                reward.Id, reward.Name, reward.Description, reward.Cost, reward.Icon,
-                Category = (int)reward.Category, reward.IsCustom, reward.IsArchived, reward.SortOrder
+                reward.Id,
+                reward.Name,
+                reward.Description,
+                reward.Cost,
+                reward.Icon,
+                Category = (int)reward.Category,
+                reward.IsCustom,
+                reward.IsArchived,
+                reward.SortOrder
             });
     }
 
@@ -66,7 +81,9 @@ public sealed class RewardRepository
             "VALUES (@RewardId, @RewardName, @Cost, @RedeemedAt); SELECT last_insert_rowid();",
             new
             {
-                redemption.RewardId, redemption.RewardName, redemption.Cost,
+                redemption.RewardId,
+                redemption.RewardName,
+                redemption.Cost,
                 RedeemedAt = redemption.RedeemedAt == default ? DateTime.Now : redemption.RedeemedAt
             });
     }

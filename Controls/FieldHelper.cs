@@ -1,5 +1,3 @@
-using System.Windows;
-
 namespace Bloom.Controls;
 
 public static class FieldHelper

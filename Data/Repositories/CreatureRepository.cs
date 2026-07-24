@@ -1,6 +1,8 @@
+using Bloom.Models;
 using Dapper;
 using Microsoft.Data.Sqlite;
-using Bloom.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Bloom.Data.Repositories;
 
@@ -32,9 +34,20 @@ public sealed class CreatureRepository
             "@IsUnlocked, @DiscoveredAt, @Affection, @TimesPet, @LastPetAt, @SortOrder); SELECT last_insert_rowid();",
             new
             {
-                creature.Name, creature.Species, creature.Blurb, creature.ImagePath, creature.SilhouettePath,
-                creature.AccentColor, Rarity = (int)creature.Rarity, creature.UnlockCost, creature.IsUnlocked,
-                creature.DiscoveredAt, creature.Affection, creature.TimesPet, creature.LastPetAt, creature.SortOrder
+                creature.Name,
+                creature.Species,
+                creature.Blurb,
+                creature.ImagePath,
+                creature.SilhouettePath,
+                creature.AccentColor,
+                Rarity = (int)creature.Rarity,
+                creature.UnlockCost,
+                creature.IsUnlocked,
+                creature.DiscoveredAt,
+                creature.Affection,
+                creature.TimesPet,
+                creature.LastPetAt,
+                creature.SortOrder
             });
     }
 

@@ -1,6 +1,8 @@
+using Bloom.Models;
 using Dapper;
 using Microsoft.Data.Sqlite;
-using Bloom.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Bloom.Data.Repositories;
 
@@ -33,8 +35,15 @@ public sealed class TaskRepository
             "SELECT last_insert_rowid();",
             new
             {
-                task.Title, task.Note, task.DueDate, task.IsDone, task.DoneAt, Priority = (int)task.Priority,
-                task.CoinReward, task.SortOrder, CreatedAt = task.CreatedAt == default ? DateTime.Now : task.CreatedAt
+                task.Title,
+                task.Note,
+                task.DueDate,
+                task.IsDone,
+                task.DoneAt,
+                Priority = (int)task.Priority,
+                task.CoinReward,
+                task.SortOrder,
+                CreatedAt = task.CreatedAt == default ? DateTime.Now : task.CreatedAt
             });
     }
 
@@ -46,8 +55,15 @@ public sealed class TaskRepository
             "done_at = @DoneAt, priority = @Priority, coin_reward = @CoinReward, sort_order = @SortOrder WHERE id = @Id;",
             new
             {
-                task.Id, task.Title, task.Note, task.DueDate, task.IsDone, task.DoneAt,
-                Priority = (int)task.Priority, task.CoinReward, task.SortOrder
+                task.Id,
+                task.Title,
+                task.Note,
+                task.DueDate,
+                task.IsDone,
+                task.DoneAt,
+                Priority = (int)task.Priority,
+                task.CoinReward,
+                task.SortOrder
             });
     }
 

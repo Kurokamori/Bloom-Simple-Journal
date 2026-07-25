@@ -1,3 +1,5 @@
+using System.Windows;
+using System.Windows.Media;
 using Bloom.Models;
 
 namespace Bloom.Services;

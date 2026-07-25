@@ -1,10 +1,7 @@
-using Bloom.Models;
-using Microsoft.UI.Xaml;
-using System.Collections.Generic;
 using System.Globalization;
-using Windows.UI.Xaml;
 using System.Windows;
-using Microsoft.UI.Xaml.Media;
+using System.Windows.Media;
+using Bloom.Models;
 
 namespace Bloom.Controls;
 

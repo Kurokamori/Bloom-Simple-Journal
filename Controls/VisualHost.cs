@@ -1,3 +1,6 @@
+using System.Windows;
+using System.Windows.Media;
+
 namespace Bloom.Controls;
 
 public sealed class VisualHost : FrameworkElement

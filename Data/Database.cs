@@ -1,6 +1,6 @@
+using System.IO;
 using Dapper;
 using Microsoft.Data.Sqlite;
-using System.IO;
 
 namespace Bloom.Data;
 

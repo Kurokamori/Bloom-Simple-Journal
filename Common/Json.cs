@@ -1,32 +1,31 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 
-namespace Bloom.Common
+namespace Bloom.Common;
+
+public static class Json
 {
-    public static class Json
+    private static readonly JsonSerializerOptions Options = new()
     {
-        private static readonly JsonSerializerOptions Options = new()
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            WriteIndented = false,
-            PropertyNameCaseInsensitive = true
-        };
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        WriteIndented = false,
+        PropertyNameCaseInsensitive = true
+    };
 
-        public static string Write<T>(T value) => JsonSerializer.Serialize(value, Options);
+    public static string Write<T>(T value) => JsonSerializer.Serialize(value, Options);
 
-        public static T? Read<T>(string? text)
+    public static T? Read<T>(string? text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
         {
-            if (string.IsNullOrWhiteSpace(text))
-            {
-                return default;
-            }
-            try
-            {
-                return JsonSerializer.Deserialize<T>(text, Options);
-            }
-            catch (JsonException)
-            {
-                return default;
-            }
+            return default;
+        }
+        try
+        {
+            return JsonSerializer.Deserialize<T>(text, Options);
+        }
+        catch (JsonException)
+        {
+            return default;
         }
     }
 }

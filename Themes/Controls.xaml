@@ -107,7 +107,7 @@
 
     <Style x:Key="Pill" TargetType="Border">
         <Setter Property="Background" Value="{DynamicResource PrimarySoft}" />
-        <Setter Property="CornerRadius" Value="999" />
+        <Setter Property="CornerRadius" Value="10" />
         <Setter Property="Padding" Value="10,4" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
     </Style>

@@ -1,5 +1,5 @@
-using Bloom.Models;
 using System.IO;
+using Bloom.Models;
 
 namespace Bloom.Services;
 
@@ -7,36 +7,12 @@ public static class StickerArt
 {
     private static readonly Dictionary<string, string> Glyphs = new(StringComparer.OrdinalIgnoreCase)
     {
-        ["heart"] = "❤️",
-        ["star"] = "⭐",
-        ["sparkle"] = "✨",
-        ["sun"] = "☀️",
-        ["cloud"] = "☁️",
-        ["rainbow"] = "🌈",
-        ["flower"] = "🌸",
-        ["leaf"] = "🍃",
-        ["mushroom"] = "🍄",
-        ["cat"] = "🐱",
-        ["bunny"] = "🐰",
-        ["bear"] = "🐻",
-        ["coffee"] = "☕",
-        ["strawberry"] = "🍓",
-        ["cupcake"] = "🧁",
-        ["moon"] = "🌙",
-        ["smile"] = "🙂",
-        ["teardrop"] = "💧",
-        ["bow"] = "🎀",
-        ["crown"] = "👑",
-        ["butterfly"] = "🦋",
-        ["ghost"] = "👻",
-        ["planet"] = "🪐",
-        ["candle"] = "🕯️",
-        ["tea"] = "🍵",
-        ["frog"] = "🐸",
-        ["snail"] = "🐌",
-        ["crescent"] = "🌛",
-        ["gem"] = "💎",
-        ["paw"] = "🐾"
+        ["heart"] = "❤️", ["star"] = "⭐", ["sparkle"] = "✨", ["sun"] = "☀️", ["cloud"] = "☁️",
+        ["rainbow"] = "🌈", ["flower"] = "🌸", ["leaf"] = "🍃", ["mushroom"] = "🍄", ["cat"] = "🐱",
+        ["bunny"] = "🐰", ["bear"] = "🐻", ["coffee"] = "☕", ["strawberry"] = "🍓", ["cupcake"] = "🧁",
+        ["moon"] = "🌙", ["smile"] = "🙂", ["teardrop"] = "💧", ["bow"] = "🎀", ["crown"] = "👑",
+        ["butterfly"] = "🦋", ["ghost"] = "👻", ["planet"] = "🪐", ["candle"] = "🕯️", ["tea"] = "🍵",
+        ["frog"] = "🐸", ["snail"] = "🐌", ["crescent"] = "🌛", ["gem"] = "💎", ["paw"] = "🐾"
     };
 
     public static string KeyFromPath(string imagePath) =>

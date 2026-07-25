@@ -1,5 +1,11 @@
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Media;
+using System.Windows.Shapes;
 using Bloom.Common;
 using Bloom.Models;
+using Bloom.ViewModels.Journal;
 using Condition = Bloom.Models.Condition;
 
 namespace Bloom.Services;

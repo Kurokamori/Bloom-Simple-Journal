@@ -1,3 +1,6 @@
+using System.Windows;
+using System.Windows.Controls;
+
 namespace Bloom.Controls;
 
 public partial class SwatchPicker : UserControl

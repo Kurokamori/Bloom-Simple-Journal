@@ -1,9 +1,6 @@
 {
   "profiles": {
-    "Bloom (Package)": {
-      "commandName": "MsixPackage"
-    },
-    "Bloom (Unpackaged)": {
+    "Bloom": {
       "commandName": "Project"
     }
   }

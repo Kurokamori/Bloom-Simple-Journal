@@ -1,6 +1,6 @@
+using Dapper;
 using Bloom.Data;
 using Bloom.Data.Repositories;
-using Dapper;
 
 namespace Bloom.Services;
 

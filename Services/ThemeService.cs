@@ -1,5 +1,7 @@
-using Bloom.Data.Repositories;
 using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Media;
+using Bloom.Data.Repositories;
 
 namespace Bloom.Services;
 
